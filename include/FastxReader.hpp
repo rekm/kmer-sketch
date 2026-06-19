@@ -12,7 +12,8 @@
 // - FASTA: '>' header, 1+ sequence lines (may be split across multiple lines).
 // - FASTQ: '@' header, next line sequence, '+' line, next line qualities.
 // Non-ACGT bases are allowed; k-mer scanner may decide to skip.
-
+namespace kmer_sketch
+{
 class FastxReader {
 public:
     explicit FastxReader(const std::string& path) : in_(path) {
@@ -64,4 +65,5 @@ private:
     std::ifstream in_;
 };
 
+}// namespace kmer_sketch
 #endif // FASTX_READER_HPP
