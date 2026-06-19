@@ -8,6 +8,7 @@
 
 #include "SketchIO.hpp"
 
+namespace kmer_sketch{
 static void usage() {
     std::cerr << "Usage:\n"
               << "  pwsimilarity --metric {jaccard|cosine} --output OUT.tsv SKETCH1 SKETCH2 [SKETCH3 ...]\n";
@@ -109,4 +110,11 @@ int main(int argc, char** argv) {
     }
     std::cerr << "Wrote: " << outpath << "\n";
     return 0;
+}
+} //namespace kmer_sketch
+
+
+int main(int argc, char** argv)
+{
+    return kmer_sketch::main(argc, argv);
 }

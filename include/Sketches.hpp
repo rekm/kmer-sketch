@@ -16,6 +16,7 @@
 
 #include "Hash.hpp"
 
+namespace kmer_sketch{
 static constexpr uint64_t HASH_MAX = std::numeric_limits<uint64_t>::max();
 
 struct SketchInfo {
@@ -792,5 +793,5 @@ private:
     std::vector<uint64_t> a_, b_;
     std::vector<uint64_t> mins_;
 };
-
+} //namespace kmer_sketch
 #endif // SKETCHES_HPP

@@ -7,7 +7,7 @@
 // (optional) #include <cerrno>
 
 #include "SketchIO.hpp"
-
+namespace kmer_sketch{
 static void usage() {
     std::cerr << "Usage:\n"
               << "  filter --query Q.sketch "
@@ -185,4 +185,10 @@ int main(int argc, char** argv) {
         *pout << r.path << "\t" << r.score << "\t" << r.inter << "\t" << r.size1 << "\t" << r.size2 << "\t" << r.uni << "\n";
     }
     return 0;
+}
+}//namespace kmer_sketch
+
+int main(int argc, char** argv)
+{
+    return kmer_sketch::main(argc, argv);
 }

@@ -10,7 +10,7 @@
 
 // KmerScanner: iterate over all k-mers of sequences and feed hashes to a callback.
 // Options: skip kmers with ambiguous bases, canonicalize by reverse complement, hash seed.
-
+namespace kmer_sketch {
 struct KmerScanOptions {
     size_t k = 31;
     bool skip_ambiguous = true;
@@ -74,5 +74,5 @@ void scan_kmers_in_sequence(const std::string& seq_raw, const KmerScanOptions& o
         }
     }
 }
-
+} // namespace kmer_sketch
 #endif // KMER_SCANNER_HPP

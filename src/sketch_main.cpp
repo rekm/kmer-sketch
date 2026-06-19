@@ -10,6 +10,10 @@
 #include "KmerScanner.hpp"
 #include "Sketches.hpp"
 
+
+
+namespace kmer_sketch{
+
 static void usage() {
     std::cerr << "Usage:\n"
               << "  sketch --input FILE --kmer N --algo {maxgeom|alphamaxgeom|fracminhash|minhash|bottomk} "
@@ -139,4 +143,10 @@ int main(int argc, char** argv) {
     }
 
     return 0;
+}
+}// namespace kmer_sketch
+
+int main(int argc, char** argv)
+{
+    return kmer_sketch::main(argc, argv);
 }

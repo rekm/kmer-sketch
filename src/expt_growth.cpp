@@ -19,6 +19,7 @@
 #include "KmerScanner.hpp"
 #include "Sketches.hpp"
 
+namespace kmer_sketch{
 // ----------- stable seeded 64-bit hashing of strings -----------
 static inline uint64_t splitmix64(uint64_t x) {
     x += 0x9e3779b97f4a7c15ULL;
@@ -426,4 +427,11 @@ int main(int argc, char** argv) {
         return 3;
     }
     return 0;
+}
+} //namespace kmer_sketch
+
+
+int main(int argc, char** argv)
+{
+    return kmer_sketch::main(argc, argv);
 }

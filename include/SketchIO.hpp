@@ -12,7 +12,7 @@
 
 // A small loader that inspects the header to detect algorithm, then parses accordingly.
 // We represent a "variant" type via simple struct with pointers. Callers must manage which pointer is non-null.
-
+namespace kmer_sketch{
 struct VariantSketch {
     std::string algo;
     size_t kmer_size = 0;
@@ -106,5 +106,5 @@ inline bool compatible(const VariantSketch& a, const VariantSketch& b, std::stri
     }
     return true;
 }
-
+} //namespace kmer_sketch
 #endif // SKETCH_IO_HPP

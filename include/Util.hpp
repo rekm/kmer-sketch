@@ -7,7 +7,7 @@
 #include <cctype>
 #include <vector>
 
-namespace util {
+namespace kmer_sketch::util {
 
 inline std::string to_upper(std::string s) {
     std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return std::toupper(c); });

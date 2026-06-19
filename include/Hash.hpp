@@ -9,7 +9,7 @@
 // We implement MurmurHash3_x64_128 (public domain reference) and take the low 64 bits as our 64-bit hash.
 // We also provide a SplitMix64 PRNG for generating reproducible coefficient sequences (used in MinHash).
 
-namespace hashutil {
+namespace kmer_sketch::hashutil {
 
 // rotate left 64
 static inline uint64_t rotl64(uint64_t x, int8_t r) {
