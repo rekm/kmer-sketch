@@ -1,4 +1,7 @@
 # MaxGeomHash & $\alpha$-MaxGeomHash  
+
+> 📦 **Forked from** [KoslickiLab/kmer-sketch](https://github.com/KoslickiLab/kmer-sketch) 
+
 A C++ implementation of MaxGeomHash and $\alpha$-MaxGeomHash for 
 - k-mer sketching of FASTA/FASTQ files, and 
 - pairwise similarity estimation from k-mer sketches.
@@ -30,9 +33,41 @@ Clone the repository and build. The executables are generated in the bin/ direct
 ```bash
 git clone https://github.com/mahmudhera/kmer-sketch
 cd kmer-sketch
+
 make
 export PATH=$(pwd)/bin:$PATH
 ```
+
+#### Cmake 
+
+A little bit more cumbersome, but offers more control and also enables 
+easier use by other projects. 
+
+```bash
+git clone https://github.com/rekm/kmer-sketch.git
+cd kmer-sketch
+
+cmake -B build DCMAKE_INSTALL_PREFIX="$(pwd)/install"
+cmake --build build
+cmake --install build
+export PATH=$(pwd)/install/bin:$PATH
+```
+
+#### Cmake in Conda Emvironment
+```
+git clone https://github.com/rekm/kmer-sketch.git
+cd kmer-sketch
+
+conda create --env kmer_sets_env
+conda activate kmer_sets_env
+
+# Optional: install into the active Conda environment
+cmake -B build -DCMAKE_INSTALL_PREFIX="$CONDA_PREFIX"
+
+cmake --build build
+cmake --install build
+```
+
 
 ### Verifying Installation
 
